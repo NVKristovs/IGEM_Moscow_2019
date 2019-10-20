@@ -8,8 +8,8 @@
 
 AsyncWebServer server(80);
 
-const char* ssid = "Foton"; // Your WiFi SSID
-const char* password = "12345678"; // Your WiFi Password
+const char* ssid = ""; // Your WiFi SSID
+const char* password = ""; // Your WiFi Password
 const int x_axis_size = 20; //размер графика 
 int x_axis[x_axis_size];
 int y_axis[x_axis_size];
@@ -87,9 +87,9 @@ void setup() {
   
     ESPDash.init(server);   // Initiate ESPDash and attach your Async webserver instance
     // Add Respective Cards
-    ESPDash.addNumberCard("num1", "Оптическая плотность",average );
-    ESPDash.addLineChart("chart1", "Зависимоть оптической плотности от времени",  x_axis,  vi, "Значение оптической плотности ",  y_axis,  vi);
-    ESPDash.addStatusCard("card1", "Состояние", state_card);
+    ESPDash.addNumberCard("num1", "Optical density",average );
+    ESPDash.addLineChart("chart1", "Dependence of optical density on time",  x_axis,  vi, "the value of optical density",  y_axis,  vi);
+    ESPDash.addStatusCard("card1", "Condition", state_card);
     ESPDash.addButtonCard("but1", "off"); 
     ESPDash.addButtonCard("but8", "start"); 
     ESPDash.addButtonCard("but2", "470 нм high");
